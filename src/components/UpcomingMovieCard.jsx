@@ -24,7 +24,7 @@ const UpcomingMovieCard = ({ card }) => {
 
   },[user?.email])
   
-  console.log(showMovies);
+
   
 
 
