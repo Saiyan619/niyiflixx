@@ -1,0 +1,62 @@
+.background{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+.signup-main-container{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.681);
+    width: 310px;
+    height: 450px;
+}
+.signup-sub-main-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 25px;
+}
+.signup{font-size: 25px; text-transform: capitalize; font-weight: 600;}
+.email-password-input{
+    height: 50px;
+    padding: 5px;
+    outline: none;
+    border: none;
+    margin-top: 20px;
+    border-radius: 3px;
+    color: black;
+}.email-password-input_active{
+    height: 50px;
+    padding: 5px;
+    outline: none;
+    border: none;
+    margin-top: 20px;
+    border-radius: 3px;
+    color: black;
+    background-color: green;
+}
+.signup-sub-main-container button{
+    background-color: rgb(207, 32, 32);
+    border: none;
+    outline: none;
+    height: 50px;
+    margin-top: 45px;
+    border-radius: 3px;
+}
+.remember-me{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    color: grey;
+}
+.remember-me-1{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+p{
+    margin-top: 10px;
+}

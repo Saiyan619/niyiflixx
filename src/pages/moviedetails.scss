@@ -1,0 +1,208 @@
+@import '../Styles/variables.scss';
+@import '../Styles/mixins.scss';
+
+
+.main-details-con{
+    background-color: black;    
+}
+
+.details-con-1{
+    background-color: black;
+     position: relative;
+    img{
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .overlay{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image:linear-gradient(to top,rgb(0, 0, 0), rgba(0, 0, 0, 0)) ;
+    }
+    .details{
+        position: absolute;
+        top: 35%;
+        padding: 10px;
+
+        h1{
+            color: white;
+            font-size: 20px;
+        }
+        span{color: $fontColor1;}
+        p{
+            color: $fontColor1;
+            font-size: 11px;
+           width: 70%;
+           @include respond(phone) {
+            width: 100%;
+           }
+        }
+
+        .btn-1{
+            background-color: rgb(236, 10, 10);
+            color: white;
+            padding: 10px 30px;
+            border-radius: 100px;
+            outline: none;
+            border: none;
+            margin-top: 10px;
+        }
+        .btn-2{
+            background-color: transparent;
+            color: white;
+            padding: 10px 30px;
+            border-radius: 100px;
+            outline: none;
+            border: 1px solid white;
+            margin-left: 10px;
+        }.btn-2:hover{
+            background-color: white;
+            color: black;
+            padding: 10px 30px;
+            border-radius: 100px;
+            outline: none;
+            border: 1px solid white;
+        }
+    }
+
+   
+}
+
+.youtube-container{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+
+    @include respond(big-phone) {
+        display: flex;
+        flex-direction: column;
+        scale: 0.6;
+        top: 28%;
+        left: 20%;
+           transform: translate(-50%,-50%);
+       }
+    @include respond(phone) {
+        display: flex;
+        flex-direction: column;
+        scale: 0.5;
+        top: 8%;
+        left: 5%;
+           transform: translate(-50%,-50%);
+       }
+     
+
+    button{
+        padding: 7px 15px;
+        border: none;
+        outline: none;
+        background-color: red;
+        border-radius: 10px;
+    }
+}
+
+.details-con-2{
+    display: flex;
+    gap: 10px;
+    padding-left: 5px;
+    // flex-direction: column;
+    flex-wrap: wrap;
+    font-size: 13px;
+    @include respond(phone) {
+        margin-top: 60px;
+        
+      }
+
+    .other-details-con{
+        padding: 5px;
+        border-radius: 6px;
+    border: 1px solid var(--Black-15, #262626);
+    background: var(--Black-08, #141414);
+
+        span{display: flex; align-items: center; justify-content: center;}
+    }
+    .other-details-con span:nth-child(1){
+        color: $fontColor1;
+    }
+
+    
+}
+
+h5{
+    font-size: 25px;
+    text-transform: capitalize;
+}
+.cast-details{
+        
+    
+    .cast-card{
+       position: relative;
+        img{
+            width: 130px;
+        }
+        .cast-name{
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 70%;
+            left: 0%;
+            padding: 3px;
+        }
+        .cast-name span:nth-child(2){
+            color: $fontColor1;
+            font-size: 11px;
+        }.cast-name span:nth-child(1){
+            color: $fontColor1;
+            font-size: 11px;
+        }
+    }
+    
+}
+
+
+.embla {
+    position: relative;
+    margin-top: 20px;
+  }
+  .embla__viewport {
+    overflow: hidden;
+   
+  }
+  .embla__container {
+    display: flex;
+    // flex: 0 0 50%;
+    gap: 20px;
+  }
+  .embla__button_prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 40px;
+    border-radius: 100px;
+    border: none;
+    padding: 3px;
+    margin: auto;
+    background-color: transparent;
+} 
+.embla__button_next {
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 40px;
+    border-radius: 100px;
+    border: none;
+    padding: 3px;
+    margin: auto;
+    background-color: transparent;
+}
+

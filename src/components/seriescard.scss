@@ -1,0 +1,48 @@
+@import '../Styles/variables.scss';
+@import '../Styles/mixins.scss';
+
+.upcoming-container{
+    margin-top: 40px;
+ 
+}
+
+h2{text-transform: capitalize;}
+
+.embla {
+    position: relative;
+    margin-top: 20px;
+  }
+  .embla__viewport {
+    overflow: hidden;
+   
+  }
+  .embla__container {
+    display: flex;
+    // flex: 0 0 50%;
+    gap: 20px;
+  }
+  .embla__button_prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 40px;
+    border-radius: 100px;
+    border: none;
+    padding: 3px;
+    margin: auto;
+    background-color: transparent;
+} 
+.embla__button_next {
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 40px;
+    border-radius: 100px;
+    border: none;
+    padding: 3px;
+    margin: auto;
+    background-color: transparent;
+}
