@@ -48,9 +48,31 @@ let numberWithoutColon = parseInt(stringWithoutColon, 10);
     axios.get(`${baseUrl}/movie/${numberWithoutColon}/videos?api_key=${Apikey}`).then((response) => {
       let result = response.data.results;
       console.log(result)
-      let trailerName = 'Official Trailer';
-      let officialTrailer = result.find((videoName) => videoName.name === trailerName   )
-      console.log(officialTrailer)
+      // Define possible trailer name variations
+    const trailerNameVariations = [
+      'Official Trailer',
+      'Trailer',
+      'Official trailer',
+      'Teaser',
+      'Official UK Trailer',
+      'Official Restricted Trailer',
+      'official Restricted Trailer',
+      
+      
+      // Add more variations as needed
+    ];
+
+    // Find the first trailer that matches any of the variations
+      let officialTrailer = result.find((videoName) => trailerNameVariations.includes(videoName.name));
+      if (officialTrailer) {
+        console.log(officialTrailer);
+        setvideo(officialTrailer);
+              } else {
+                let officialTrailer = null
+        console.log(officialTrailer);
+        setvideo(officialTrailer)
+        
+              }
       setvideo(officialTrailer)
       // let newResults = result.splice(0, 13)
       // setcast(newResults);
@@ -75,7 +97,7 @@ let numberWithoutColon = parseInt(stringWithoutColon, 10);
         vote_average
     } = details;  
    
-  console.log(original_title || original_name )
+  // console.log(original_title || original_name )
     return (
       <div className="main-details-con">
         <div className="details-con-1">
@@ -86,7 +108,7 @@ let numberWithoutColon = parseInt(stringWithoutColon, 10);
           />
           <div className='youtube-container'>
             {closeTrailer ? <YouTube
-              videoId={video.key} /> : null}
+              videoId={video ? video.key : null}  /> : null}
            {closeTrailer ? <button onClick={toggleCloseTrailer}>Close</button> : null}
           </div>
           <div className="details">

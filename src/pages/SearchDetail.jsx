@@ -31,17 +31,40 @@ let numberWithoutColon = parseInt(stringWithoutColon, 10);
 
     function toggleCloseTrailer() {
       setcloseTrailer(!closeTrailer);
-    }
+  }
+  
    const trailer = async () => {
       axios.get(`${baseUrl}/tv/${numberWithoutColon}/videos?api_key=${Apikey}`).then((response) => {
         let result = response.data.results;
         console.log(result)
-        let officialTrailer = result.find((videoName) => videoName.name ===  'Official Trailer' ? 'Official Trailer' : videoName.name !==  'Official Trailer' ? 'trailer' : null)
-        console.log(officialTrailer)
+
+ const trailerNameVariations = [
+  'Official Trailer',
+  'Official UK Trailer',
+   'Official Restricted Trailer',
+   'Series Trailer',
+   'Trailer',
+   'Official trailer',
+   'Teaser',
+   'official Restricted Trailer'
+];
+
+let officialTrailer = result.find((videoName) => trailerNameVariations.includes(videoName.name));
+
+// Check if an official trailer is found before setting the state
+if (officialTrailer) {
+  console.log(officialTrailer);
+  setvideo(officialTrailer);
+} else {
+  console.log("No official trailer found.");
+
+}
+      });
+     console.log(officialTrailer)
         setvideo(officialTrailer)
 
-    })
     }
+    
     const getDetails = async() => { 
         const response = await fetch(`${baseUrl}/tv/${numberWithoutColon}?api_key=${Apikey}`);
         const data = await response.json()

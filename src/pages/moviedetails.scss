@@ -3,7 +3,9 @@
 
 
 .main-details-con{
-    background-color: black;    
+    background-color: black; 
+    position: relative;   
+    // height: 100vh;
 }
 
 .details-con-1{
@@ -11,14 +13,14 @@
      position: relative;
     img{
         width: 100%;
-        height: 300px;
+        height: 60vh;
         object-fit: cover;
     }
 
     .overlay{
         position: absolute;
         width: 100%;
-        height: 100%;
+        height: 60vh;
         background-image:linear-gradient(to top,rgb(0, 0, 0), rgba(0, 0, 0, 0)) ;
     }
     .details{
@@ -36,6 +38,8 @@
             font-size: 11px;
            width: 70%;
            @include respond(phone) {
+            width: 100%;
+           }@include respond(big-phone) {
             width: 100%;
            }
         }
@@ -79,14 +83,21 @@
     top: 70%;
     left: 50%;
     transform: translate(-50%,-50%);
-
+    @include respond(tab-port) {
+        display: flex;
+        flex-direction: column;
+        scale: 0.8;
+        top: 38%;
+        left: 40%;
+           transform: translate(-50%,-50%);
+       }
 
     @include respond(big-phone) {
         display: flex;
         flex-direction: column;
-        scale: 0.6;
+        scale: 0.55;
         top: 28%;
-        left: 20%;
+        left: 13%;
            transform: translate(-50%,-50%);
        }
     @include respond(phone) {
@@ -94,7 +105,7 @@
         flex-direction: column;
         scale: 0.5;
         top: 8%;
-        left: 5%;
+        left: 4%;
            transform: translate(-50%,-50%);
        }
      
@@ -115,6 +126,7 @@
     // flex-direction: column;
     flex-wrap: wrap;
     font-size: 13px;
+    margin-top: 30px;
     @include respond(phone) {
         margin-top: 60px;
         
