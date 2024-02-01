@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import '../components/navbar.scss';
 import { UserAuth } from '../context/AuthContext';
 import Modal from './Modal';
+import { FiMenu } from 'react-icons/fi';
 
 const Navbar = () => {
   
@@ -61,8 +62,10 @@ const Navbar = () => {
           }
       
      </div>
-     </div>
-     <div onClick={handleOpen} ><img className='ham' src='/src/assets/icons8-menu-50.png' alt='ham' /></div>
+      </div>
+      {/* <img className='ham' src='/src/assets/icons8-menu-50.png' alt='ham' /> */}
+      
+     <div onClick={handleOpen} ><FiMenu size={40} color="black" className='ham'/></div>
 
     </div>
   )
