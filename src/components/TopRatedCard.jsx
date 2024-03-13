@@ -22,7 +22,6 @@ const TopRatedCard = ({ card }) => {
     }
   },[user?.email])
 
-  console.log(showMovies);
   
   const handleLikeMovies = async () => {
     console.log(card.id)

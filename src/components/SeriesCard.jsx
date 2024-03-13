@@ -21,7 +21,6 @@ const SeriesCard = ({ card }) => {
     }
   }, [user?.email]);
 
-  console.log(showMovies);
 
   const handleLikeMovies = async () => { 
     const userEmail = user?.email

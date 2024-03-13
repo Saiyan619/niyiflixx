@@ -25,11 +25,16 @@ export  function AuthProvider({children}) {
         return signInWithEmailAndPassword(auth, email, password);
     }
  
-    const signUp = (email ,password) => {
-        createUserWithEmailAndPassword(auth, email, password);
-       setDoc(doc(db, "users", email),{
-           favMovies: [],
-       })
+    const signUp = (email, password) => {
+        try {
+            createUserWithEmailAndPassword(auth, email, password);
+            setDoc(doc(db, "users", email),{
+                favMovies: [],
+            })  
+        } catch (error) {
+            console.error(error)
+        }
+       
    
     }
     
