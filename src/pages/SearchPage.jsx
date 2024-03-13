@@ -7,7 +7,7 @@ import '../pages/search.scss'
 const SearchPage = () => {
     const [SearchedMovie, setSearchedMovie] = useState([]);
     const [searchInput, setsearchInput] = useState('')
-    const Apikey = "281474624f07e2f48379e34aeb7f9490";
+    const Apikey = "0e2d4610ab50a39abec05e21b91b1cc4";
     const baseUrl = "https://api.themoviedb.org/3"
     // const searchTerm = 'naruto'
 

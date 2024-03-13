@@ -17,7 +17,6 @@ const Popular = () => {
     const GetPopular = () => {
         axios.get(`${baseUrl}/movie/upcoming?api_key=${Apikey}`).then((response) => {
             const data = response.data.results
-            // console.log(response.data.results)
             setpopular(data)
         })
     }

@@ -17,7 +17,6 @@ const Upcoming = () => {
     const GetUpcoming = () => {
         axios.get(`${baseUrl}/movie/popular?api_key=${Apikey}`).then((response) => {
             const data = response.data.results
-            console.log(data)
             setupcoming(data)
         })
     }

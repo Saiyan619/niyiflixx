@@ -18,7 +18,6 @@ const TopRated = () => {
     const GetTopRated = () => {
         axios.get(`${baseUrl}/movie/top_rated?api_key=${Apikey}`).then((response) => {
             const data = response.data.results
-            // console.log(response.data.results)
             settopRated(data)
         })
     }

@@ -21,7 +21,7 @@ const SearchDetail = () => {
   const [cast, setcast] = useState([])
   const [detailsSeries, setDetailsSeries] = useState([])
 
-    const Apikey = "281474624f07e2f48379e34aeb7f9490";
+    const Apikey = import.meta.env.VITE_TMDB_KEY;
     const baseUrl = "https://api.themoviedb.org/3"
   let param = useParams();
     let numberWithColon = param.id;

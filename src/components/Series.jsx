@@ -17,7 +17,6 @@ const Series = () => {
     const GetSeries = () => {
         axios.get(`${baseUrl}/tv/top_rated?api_key=${Apikey}`).then((response) => {
             const data = response.data.results
-            // console.log(response.data.results)
             setseries(data)
         })
     }

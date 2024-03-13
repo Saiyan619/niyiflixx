@@ -26,12 +26,13 @@ export  function AuthProvider({children}) {
     }
  
     const signUp = (email ,password) => {
-         createUserWithEmailAndPassword(auth, email, password);
-        setDoc(doc(db, "users", email),{
-            favMovies: [],
-        })
-    
+        createUserWithEmailAndPassword(auth, email, password);
+       setDoc(doc(db, "users", email),{
+           favMovies: [],
+       })
+   
     }
+    
     const logOut = () => {
         return signOut(auth);
     }

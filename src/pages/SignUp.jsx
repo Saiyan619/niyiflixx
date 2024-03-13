@@ -4,6 +4,8 @@ import '../pages/signup.scss'
 import { Link, useNavigate } from 'react-router-dom'
 import backImg from '../assets/netflix-background-gs7hjuwvv2g0e9fj.jpg';
 import { UserAuth } from '../context/AuthContext';
+import { doc, setDoc } from 'firebase/firestore';
+import { db } from '../utils/Firebase';
 
 
 const SignUp = () => {
@@ -24,7 +26,14 @@ const SignUp = () => {
   const handleSubmit = async ()=> {
     try {
       await signUp(email, password);
+      setDoc(doc(db, "users", email),{
+        favMovies: [],
+    })
+      if (user) {
+        navigate('/')
+      }
       navigate('/')
+      console.log('signed in')
     } catch (error) {
       console.log(error)
     }

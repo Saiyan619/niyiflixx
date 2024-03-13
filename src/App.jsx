@@ -21,7 +21,7 @@ function App() {
       <AuthProvider>
       <Navbar />
       <Routes>
-        <Route path='/signup' element={<SignUp />}  />
+   3     <Route path='/signup' element={<SignUp />}  />
         <Route path='/login' element={<Login />}  />
         <Route path='/profile' element={<ProtectedRoutes> <Profile /> </ProtectedRoutes>}  />
         <Route path='/' element={<Home />}  />
