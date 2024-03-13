@@ -6,6 +6,7 @@ import backImg from '../assets/netflix-background-gs7hjuwvv2g0e9fj.jpg';
 import { UserAuth } from '../context/AuthContext';
 import { doc, setDoc } from 'firebase/firestore';
 import { db } from '../utils/Firebase';
+import toast, { Toaster } from 'react-hot-toast';
 
 
 const SignUp = () => {
@@ -23,17 +24,17 @@ const SignUp = () => {
   const {user, signUp } = UserAuth();
   const navigate = useNavigate();
 
-  const handleSubmit = async ()=> {
+  const handleSubmit = async () => {
+    const notify = () => toast('Signed In😁');
     try {
       await signUp(email, password);
       setDoc(doc(db, "users", email),{
         favMovies: [],
-    })
-      if (user) {
+      })
+      
         navigate('/')
-      }
-      navigate('/')
-      console.log('signed in')
+        notify()
+      
     } catch (error) {
       console.log(error)
     }
